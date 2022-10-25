@@ -36,10 +36,11 @@ const Header = () => {
               <Link to="/faq">FAQ</Link>
             </li>
             <li>
-              <Link to="blog">Blog</Link>
+              <Link to="/blog">Blog</Link>
             </li>
           </ul>
         </div>
+
         <Link to="/" className="btn btn-ghost normal-case text-xl">
           MUZIC
         </Link>
@@ -56,7 +57,7 @@ const Header = () => {
             <Link to="/faq">FAQ</Link>
           </li>
           <li>
-            <Link to="blog">Blog</Link>
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
       </div>

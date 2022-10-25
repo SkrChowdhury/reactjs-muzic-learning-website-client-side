@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../../images/MUZIC.png';
 
 const Footer = () => {
   return (
@@ -7,9 +9,20 @@ const Footer = () => {
       data-theme="black"
     >
       <div className="grid grid-flow-col gap-4">
-        <a className="link link-hover">Courses</a>
-        <a className="link link-hover">FAQ</a>
-        <a className="link link-hover">Blog</a>
+        <Link to="/courses" className="link link-hover">
+          Courses
+        </Link>
+        <Link to="faq" className="link link-hover">
+          FAQ
+        </Link>
+        <Link to="blog" className="link link-hover">
+          Blog
+        </Link>
+      </div>
+      <div className="avatar">
+        <div className="w-32 mask mask-squircle">
+          <img src={logo} />
+        </div>
       </div>
       <div>
         <div className="grid grid-flow-col gap-4">
