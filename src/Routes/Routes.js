@@ -3,6 +3,7 @@ import Main from '../layouts/Main';
 import Home from '../components/Home/Home';
 import Blog from '../components/Blog/Blog';
 import Courses from '../components/Courses/Courses';
+import FAQ from '../FAQ/FAQ';
 
 export const routes = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const routes = createBrowserRouter([
       {
         path: '/courses',
         element: <Courses></Courses>,
+      },
+      {
+        path: '/faq',
+        element: <FAQ></FAQ>,
       },
       {
         path: '/blog',

@@ -27,10 +27,13 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
               <Link to="/courses">Courses</Link>
             </li>
             <li>
-              <a>FAQ</a>
+              <Link to="/faq">FAQ</Link>
             </li>
             <li>
               <Link to="blog">Blog</Link>
@@ -44,10 +47,13 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
             <Link to="/courses">Courses</Link>
           </li>
           <li>
-            <a>FAQ</a>
+            <Link to="/faq">FAQ</Link>
           </li>
           <li>
             <Link to="blog">Blog</Link>
@@ -79,7 +85,7 @@ const Header = () => {
         <a className="btn">Sign IN</a>
       </div>
       <div className="avatar ml-4">
-        <div className="w-16 mask mask-hexagon">
+        <div className="w-12 mask mask-hexagon">
           <img src="https://placeimg.com/192/192/people" />
         </div>
       </div>
