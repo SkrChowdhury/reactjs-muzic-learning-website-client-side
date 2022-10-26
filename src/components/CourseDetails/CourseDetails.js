@@ -1,22 +1,36 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
+  const courses = useLoaderData();
+  console.log(courses[0]);
   return (
-    <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="flex justify-center m-10">
+      <div className="card bg-base-100 shadow-xl">
         <figure>
-          <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
+          <img src={courses[0].image_url} alt="Shoes" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
-            Shoes!
+            {courses[0].title}
             <div className="badge badge-secondary">NEW</div>
           </h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
+          <p>{courses[0].details}</p>
+          <div className="card-actions justify-start items-center">
+            <div className="avatar">
+              <div className="w-24 rounded-full">
+                <img src={courses[0].instructor.img} />
+              </div>
+            </div>
+            <div className="badge badge-outline">
+              {courses[0].instructor.name}
+            </div>
+            <div className="badge badge-outline">{courses[0].rating}</div>
+            <div className="badge badge-outline">
+              {courses[0].total_students} Students
+            </div>
           </div>
+          <button className="btn btn-success">BUY NOW</button>
         </div>
       </div>
     </div>

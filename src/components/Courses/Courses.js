@@ -8,7 +8,7 @@ const Courses = () => {
     <div className="flex flex-col lg:flex-row m-4">
       <div className="w-full lg:w-2/5 flex flex-col">
         {coursesCategories.map((category) => (
-          <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mt-4 mb-2">
+          <button className="btn bg-sky-600 text-white rounded-full btn-xs sm:btn-sm md:btn-md lg:btn-lg mt-4 mb-2">
             {category.title}
           </button>
         ))}
