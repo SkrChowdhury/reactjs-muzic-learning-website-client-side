@@ -4,6 +4,7 @@ import Home from '../components/Home/Home';
 import Blog from '../components/Blog/Blog';
 import Courses from '../components/Courses/Courses';
 import FAQ from '../FAQ/FAQ';
+import ErrorPage from '../components/ErrorPage/ErrorPage';
 
 export const routes = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const routes = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>,
+      },
+      {
+        path: '/*',
+        element: <ErrorPage></ErrorPage>,
       },
     ],
   },
