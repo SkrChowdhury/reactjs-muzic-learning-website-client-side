@@ -5,6 +5,7 @@ import Blog from '../components/Blog/Blog';
 import Courses from '../components/Courses/Courses';
 import FAQ from '../FAQ/FAQ';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
+import CourseDetails from '../components/CourseDetails/CourseDetails';
 
 export const routes = createBrowserRouter([
   {
@@ -22,6 +23,16 @@ export const routes = createBrowserRouter([
       {
         path: '/courses',
         element: <Courses></Courses>,
+        loader: () =>
+          fetch('https://muzic-server-side-skrchowdhury.vercel.app/course'),
+      },
+      {
+        path: '/courses/:id',
+        element: <CourseDetails></CourseDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `https://muzic-server-side-skrchowdhury.vercel.app/courses/${params.id}`
+          ),
       },
       {
         path: '/faq',
