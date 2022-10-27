@@ -1,24 +1,33 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
+  const [error, setError] = useState('');
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+
     signIn(email, password)
       .then((result) => {
         const user = result.user;
         form.reset();
-        navigate('/courses');
+        setError('');
+        navigate(from, { replace: true });
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
   };
 
   const { providerLogin } = useContext(AuthContext);
@@ -80,6 +89,7 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+              <p className="text-red-600 text-center">{error}</p>
             </form>
             <button
               onClick={handleGoogleSignIn}

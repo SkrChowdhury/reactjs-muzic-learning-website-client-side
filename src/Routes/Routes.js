@@ -9,6 +9,7 @@ import CourseDetails from '../components/CourseDetails/CourseDetails';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import Checkout from '../components/Checkout/Checkout';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 export const routes = createBrowserRouter([
   {
@@ -59,7 +60,11 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/checkout/:id',
-        element: <Checkout></Checkout>,
+        element: (
+          <PrivateRoute>
+            <Checkout></Checkout>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://muzic-server-side-skrchowdhury.vercel.app/courses/${params.id}`
