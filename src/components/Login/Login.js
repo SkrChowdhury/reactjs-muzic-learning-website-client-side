@@ -34,11 +34,13 @@ const Login = () => {
                   required
                 />
                 <label className="label">
-                  <p className="label-text-alt">
-                    Dont have account?{' '}
-                  </p>
-                  <Link to='/register' href="#" className="label-text-alt link link-hover">
-                Register Now
+                  <p className="label-text-alt">Dont have account? </p>
+                  <Link
+                    to="/register"
+                    href="#"
+                    className="label-text-alt link link-hover"
+                  >
+                    Register Now
                   </Link>
                 </label>
               </div>
@@ -46,6 +48,9 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            <button className="btn btn-outline btn-success m-4">
+              Sign In with Google
+            </button>
           </div>
         </div>
       </div>

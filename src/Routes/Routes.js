@@ -8,6 +8,7 @@ import ErrorPage from '../components/ErrorPage/ErrorPage';
 import CourseDetails from '../components/CourseDetails/CourseDetails';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
+import Checkout from '../components/Checkout/Checkout';
 
 export const routes = createBrowserRouter([
   {
@@ -50,12 +51,20 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: '/register',
-        element: <Register></Register>
-      }
+        element: <Register></Register>,
+      },
+      {
+        path: '/checkout/:id',
+        element: <Checkout></Checkout>,
+        loader: ({ params }) =>
+          fetch(
+            `https://muzic-server-side-skrchowdhury.vercel.app/courses/${params.id}`
+          ),
+      },
     ],
   },
 ]);

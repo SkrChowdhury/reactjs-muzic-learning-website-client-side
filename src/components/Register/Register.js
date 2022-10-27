@@ -17,7 +17,19 @@ const Register = () => {
                 <input
                   type="text"
                   name="name"
-                  placeholder="name"
+                  placeholder="Full Name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input
+                  type="text"
+                  name="photoURL"
+                  placeholder="Photo URL"
                   className="input input-bordered"
                   required
                 />
@@ -29,7 +41,7 @@ const Register = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="email"
+                  placeholder="Email"
                   className="input input-bordered"
                   required
                 />
@@ -41,7 +53,7 @@ const Register = () => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="password"
+                  placeholder="Password"
                   className="input input-bordered"
                   required
                 />
@@ -58,7 +70,6 @@ const Register = () => {
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
-            <button className="btn btn-outline btn-success m-4">Google</button>
           </div>
         </div>
       </div>
