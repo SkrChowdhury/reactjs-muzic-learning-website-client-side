@@ -5,12 +5,12 @@ import { initializeApp } from 'firebase/app';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyB_ai0IeorYHDHd2YiLHiqTeJFa4lQKBhY',
-  authDomain: 'muzic-client-side-13849.firebaseapp.com',
-  projectId: 'muzic-client-side-13849',
-  storageBucket: 'muzic-client-side-13849.appspot.com',
-  messagingSenderId: '356891112595',
-  appId: '1:356891112595:web:9ffe3fbcb5f30a56b2c966',
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
