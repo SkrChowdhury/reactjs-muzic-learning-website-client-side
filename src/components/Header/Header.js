@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   return (
     <div className="navbar bg-base-100 " data-theme="pastel">
       <div className="navbar-start">
@@ -83,11 +90,26 @@ const Header = () => {
             </svg>
           </label>
         </div>
-        <Link to='/login' className="btn">Sign IN</Link>
+        {user?.uid ? (
+          <Link onClick={handleLogout} className="btn">
+            Log Out
+          </Link>
+        ) : (
+          <Link to="/login" className="btn">
+            Sign IN
+          </Link>
+        )}
       </div>
       <div className="avatar ml-4">
-        <div className="w-12 mask mask-hexagon">
-          <img src="https://placeimg.com/192/192/people" />
+        <div
+          className=" tooltip w-12 mask mask-hexagon"
+          data-tip={user?.displayName}
+        >
+          {user?.photoURL ? (
+            <img src={user?.photoURL} />
+          ) : (
+            <img src="https://cdn-icons-png.flaticon.com/512/147/147133.png" />
+          )}
         </div>
       </div>
     </div>
