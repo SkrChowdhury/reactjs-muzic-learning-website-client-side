@@ -101,10 +101,7 @@ const Header = () => {
         )}
       </div>
       <div className="avatar ml-4">
-        <div
-          className=" tooltip w-12 mask mask-hexagon"
-          data-tip={user?.displayName}
-        >
+        <div title={user?.displayName} className=" w-12 mask mask-hexagon">
           {user?.photoURL ? (
             <img src={user?.photoURL} />
           ) : (
